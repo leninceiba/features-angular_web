@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {default as data} from '../../package.json';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'features-angular_web';
+  version = `V_${data.version}`;
 }
