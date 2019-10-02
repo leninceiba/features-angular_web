@@ -1,23 +1,23 @@
 // Karma configuration file, see link for more information
 // https://karma-runner.github.io/1.0/config/configuration-file.html
 
-module.exports = function (config) {
+module.exports = function(config) {
   config.set({
-    basePath: '',
-    frameworks: ['jasmine', '@angular-devkit/build-angular'],
+    basePath: "",
+    frameworks: ["jasmine", "@angular-devkit/build-angular"],
     plugins: [
-      require('karma-jasmine'),
-      require('karma-chrome-launcher'),
-      require('karma-jasmine-html-reporter'),
-      require('karma-coverage-istanbul-reporter'),
-      require('@angular-devkit/build-angular/plugins/karma')
+      require("karma-jasmine"),
+      require("karma-chrome-launcher"),
+      require("karma-jasmine-html-reporter"),
+      require("karma-coverage-istanbul-reporter"),
+      require("@angular-devkit/build-angular/plugins/karma")
     ],
     client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
     coverageIstanbulReporter: {
-      dir: require('path').join(__dirname, './coverage/features-angular_web'),
-      reports: ['html', 'lcovonly', 'text-summary'],
+      dir: require("path").join(__dirname, "./coverage/features-angular_web"),
+      reports: ["html", "lcovonly", "text-summary"],
       fixWebpackSourcePaths: true
     },
     coverageReporter: {
@@ -27,33 +27,29 @@ module.exports = function (config) {
           branches: 90,
           functions: 90,
           lines: 90,
-          excludes: [
-            'foo/bar/**/*.js'
-          ]
+          excludes: ["foo/bar/**/*.js"]
         },
         each: {
           statements: 90,
           branches: 90,
           functions: 90,
           lines: 90,
-          excludes: [
-            'other/directory/**/*.js'
-          ],
+          excludes: ["other/directory/**/*.js"],
           overrides: {
-            'baz/component/**/*.js': {
+            "baz/component/**/*.js": {
               statements: 98
             }
           }
         }
       }
     },
-    reporters: ['progress', 'kjhtml'],
+    reporters: ["progress", "kjhtml"],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
-    singleRun: false,
+    browsers: ["ChromeHeadless"],
+    singleRun: true,
     restartOnFileChange: true
   });
 };
