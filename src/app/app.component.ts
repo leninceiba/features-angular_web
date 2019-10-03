@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {default as data} from '../../package.json';
+import { default as data } from '../../package.json';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,6 @@ import {default as data} from '../../package.json';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'features-angular_web';
+  title = environment.title;
   version = `V_${data.version}`;
 }
